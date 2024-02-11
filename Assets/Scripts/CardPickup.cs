@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CardPickup : MonoBehaviour
 {
-    [SerializeField] private Image CardUISprite;
+    // Event triggered when a card is picked up
+    public static event Action OnCardPickedUp;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,21 +12,11 @@ public class CardPickup : MonoBehaviour
         {
             Debug.Log("Player entered trigger zone");
 
-            if (CardUISprite != null)
-            {
-                if (!CardUISprite.enabled)  
-                {
-                    Debug.Log("UI Card on");
-                    CardUISprite.enabled = true;
-                }
-                else
-                {
-                    Debug.Log("UI Card already on");
-                }
-            }
-           
+            // Trigger the event when a card is picked up
+            OnCardPickedUp?.Invoke();
+            EventHandler.Instance.PickupCard();
 
-           // Destroy(gameObject);  
+            Destroy(gameObject);
         }
     }
 }
