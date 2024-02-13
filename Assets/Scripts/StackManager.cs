@@ -1,4 +1,4 @@
-using System.Collections;
+// StackManager.cs
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +14,6 @@ public class StackManager : MonoBehaviour
         // Disable all UI images at the beginning
         foreach (Image cardImage in cardUIStack)
         {
-           
             cardImage.enabled = false;
         }
     }
@@ -31,9 +30,9 @@ public class StackManager : MonoBehaviour
         EventHandler.Instance.OnCardPickup -= HandleCardPickup;
     }
 
-
     private void HandleCardPickup()
     {
+        Debug.Log("Handling card pickup!"); // Add this debug log
         if (chargeCount < maxStackCount)
         {
             chargeCount++;

@@ -1,3 +1,4 @@
+// EventHandler.cs
 using System;
 using UnityEngine;
 
@@ -7,9 +8,6 @@ public class EventHandler : MonoBehaviour
 
     // Event to notify when a card is picked up
     public Action OnCardPickup = delegate { };
-
-    // Event to notify when a charge is used
-    public Action OnChargeUsed = delegate { };
 
     private void Awake()
     {
@@ -29,12 +27,7 @@ public class EventHandler : MonoBehaviour
     // Trigger this method to notify all subscribers that a card is picked up
     public void PickupCard()
     {
+        Debug.Log("Card picked up!"); // Add this debug log
         OnCardPickup?.Invoke();
-    }
-
-    // Trigger this method to notify all subscribers that a charge is used
-    public void UseCharge()
-    {
-        OnChargeUsed?.Invoke();
     }
 }
