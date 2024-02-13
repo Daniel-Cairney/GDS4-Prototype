@@ -16,7 +16,7 @@ public class CardPickup : MonoBehaviour
             OnCardPickedUp?.Invoke();
             EventHandler.Instance.PickupCard();
 
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
 }

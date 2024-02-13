@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -27,11 +26,14 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
+    public Transform Orientation { get { return orientation; } } // Getter for orientation
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+
     }
 
     private void Update()
@@ -48,11 +50,13 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = 0;
         }
+
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+       
     }
 
     private void MyInput()
@@ -102,4 +106,6 @@ public class PlayerMovement : MonoBehaviour
     {
         readyToJump = true;
     }
+
+
 }
