@@ -1,4 +1,3 @@
-// StackManager.cs
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,13 +20,13 @@ public class StackManager : MonoBehaviour
     private void OnEnable()
     {
         // Subscribe to the event when this script is enabled
-        EventHandler.Instance.OnCardPickup += HandleCardPickup;
+        CardPickup.OnCardPickedUp += HandleCardPickup;
     }
 
     private void OnDisable()
     {
         // Unsubscribe from the event when this script is disabled
-        EventHandler.Instance.OnCardPickup -= HandleCardPickup;
+        CardPickup.OnCardPickedUp -= HandleCardPickup;
     }
 
     private void HandleCardPickup()
