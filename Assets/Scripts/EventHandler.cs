@@ -15,7 +15,7 @@ public class EventHandler : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        // No need for the else part
+        
     }
 
     // Trigger this method to notify all subscribers that a card is picked up

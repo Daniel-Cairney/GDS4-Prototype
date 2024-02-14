@@ -8,6 +8,9 @@ public class StackManager : MonoBehaviour
     [SerializeField] private int chargeCount = 0;
     private int maxStackCount = 3;
 
+    [SerializeField] private GameObject bloodBallPrefab; // Assign the Blood Ball prefab in the Inspector
+    [SerializeField] private Transform spawnPoint; // Assign the spawn point in the Inspector
+
     private void Start()
     {
         // Disable all UI images at the beginning
@@ -71,6 +74,8 @@ public class StackManager : MonoBehaviour
                     {
                         Debug.Log("UI Card off");
                         cardImage.enabled = false;
+
+                        UseBloodBall();
                     }
                 }
             }
@@ -79,5 +84,10 @@ public class StackManager : MonoBehaviour
                 Debug.Log("No charges available.");
             }
         }
+    }
+    private void UseBloodBall()
+    {
+        // Instantiate the Blood Ball at the spawn point
+        Instantiate(bloodBallPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 }
