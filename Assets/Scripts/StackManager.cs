@@ -11,6 +11,8 @@ public class StackManager : MonoBehaviour
     [SerializeField] private GameObject bloodBallPrefab; // Assign the Blood Ball prefab in the Inspector
     [SerializeField] private Transform spawnPoint; // Assign the spawn point in the Inspector
 
+    [SerializeField] private GameObject platformPrefab;
+    [SerializeField] private Transform platformSpawnPoint;
     private void Start()
     {
         // Disable all UI images at the beginning
@@ -84,10 +86,42 @@ public class StackManager : MonoBehaviour
                 Debug.Log("No charges available.");
             }
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            // Consume a charge if there are charges available
+            if (chargeCount > 0)
+            {
+                chargeCount--;
+
+                // Disable the corresponding UI image
+                if (chargeCount < cardUIStack.Count)
+                {
+                    Image cardImage = cardUIStack[chargeCount];
+                    if (cardImage != null && cardImage.enabled)
+                    {
+                        Debug.Log("UI Card off");
+                        cardImage.enabled = false;
+
+                        Debug.Log("Rigt click detected");
+                        PlaceAblePlatform();
+                    }
+                }
+            }
+            else
+            {
+                Debug.Log("No charges available.");
+            }
+        }
     }
     private void UseBloodBall()
     {
         // Instantiate the Blood Ball at the spawn point
         Instantiate(bloodBallPrefab, spawnPoint.position, spawnPoint.rotation);
+    }
+
+    private void PlaceAblePlatform()
+    {
+        Instantiate(platformPrefab, platformSpawnPoint.position, platformSpawnPoint.rotation);
     }
 }

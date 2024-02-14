@@ -24,8 +24,8 @@ public class BloodBallForce : MonoBehaviour
     {
         if (rb != null)
         {
-            // Apply constant force in the forward direction
-            rb.AddForce(transform.forward * bloodBallSpeed, ForceMode.Force);
+            // Set the velocity directly to achieve instant speed
+            rb.velocity = transform.forward * bloodBallSpeed;
         }
         else
         {

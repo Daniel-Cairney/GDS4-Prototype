@@ -35,6 +35,7 @@ Transform:
   - {fileID: 5436607389444232282}
   - {fileID: 7372776941375299380}
   - {fileID: 6644729388635570849}
+  - {fileID: 5201008784014546949}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8518625854825054255
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a900ed71a3e390741a66fd2cae395aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 20
   groundDrag: 3
   jumpForce: 0.3
   jumpCooldown: 0
@@ -106,8 +107,9 @@ MonoBehaviour:
   chargeCount: 0
   bloodBallPrefab: {fileID: 1575009180586566963, guid: 3b26e98bac5e5844fb1df3fc99a0267a,
     type: 3}
-  spawnPoint: {fileID: 1854281231973337359, guid: 3b26e98bac5e5844fb1df3fc99a0267a,
-    type: 3}
+  spawnPoint: {fileID: 0}
+  platformPrefab: {fileID: 0}
+  platformSpawnPoint: {fileID: 0}
 --- !u!1 &3554298798946159886
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +248,37 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6351597992488551204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5201008784014546949}
+  m_Layer: 0
+  m_Name: Platform Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5201008784014546949
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6351597992488551204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3091274707884563610}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7826099524931658861
 GameObject:
   m_ObjectHideFlags: 0
