@@ -32,4 +32,12 @@ public class BloodBallForce : MonoBehaviour
             Debug.LogError("Rigidbody not found on BloodBallForce!");
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+            Debug.Log("BloodBall Destroyed");
+        }
+    }
 }
