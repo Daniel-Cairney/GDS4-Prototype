@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EndTrigger : MonoBehaviour
 {
-    [SerializeField] private float sceneToLoad;
+    [SerializeField] private string sceneToLoad;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-           // SceneManager.LoadScene(sceneToLoad);
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }
