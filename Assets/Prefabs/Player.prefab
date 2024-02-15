@@ -50,9 +50,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a900ed71a3e390741a66fd2cae395aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
-  groundDrag: 3
-  jumpForce: 0.3
+  moveSpeed: 25
+  groundDrag: 10
+  jumpForce: 1
   jumpCooldown: 0
   airMultiplier: 0.3
   jumpKey: 32
@@ -108,8 +108,9 @@ MonoBehaviour:
   bloodBallPrefab: {fileID: 1575009180586566963, guid: 3b26e98bac5e5844fb1df3fc99a0267a,
     type: 3}
   spawnPoint: {fileID: 0}
-  platformPrefab: {fileID: 0}
-  platformSpawnPoint: {fileID: 0}
+  platformPrefab: {fileID: 5767934669887785810, guid: fa9498862654d7243addd3b70815c2e6,
+    type: 3}
+  platformSpawnPoint: {fileID: 5201008784014546949}
 --- !u!1 &3554298798946159886
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,7 +264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5201008784014546949
 Transform:
   m_ObjectHideFlags: 0
@@ -273,7 +274,7 @@ Transform:
   m_GameObject: {fileID: 6351597992488551204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.7, z: 0}
+  m_LocalPosition: {x: 0, y: -1.401, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

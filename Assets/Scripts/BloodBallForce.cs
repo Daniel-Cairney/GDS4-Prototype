@@ -39,5 +39,11 @@ public class BloodBallForce : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("BloodBall Destroyed");
         }
+
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+            Debug.Log("BloodBall Destroyed");
+        }
     }
 }

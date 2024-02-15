@@ -15,7 +15,7 @@ public class CardPickup : MonoBehaviour
             // Trigger the event when a card is picked up
             OnCardPickedUp?.Invoke();
 
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

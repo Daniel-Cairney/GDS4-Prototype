@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6016af2df263e04c9c611596a161458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodBallSpeed: 30
+  bloodBallSpeed: 60
